@@ -1,8 +1,9 @@
 describe('template spec', () => {
-  it('Login com ados validados deve permitir entradas no sistema', () => {
+  beforeEach(() => {
     //Arrage (preparações)
     cy.visit('http://localhost:4000')
-
+  })
+  it('Login com ados validados deve permitir entradas no sistema', () => {
     //Act (ações do teste)
     cy.get('#username').click().type('julio.lima')
     cy.get('#senha').click().type('123456')
@@ -14,9 +15,6 @@ describe('template spec', () => {
   })
 
   it('Login com dados invalidados deve apresentar mensagem de erro', () => {
-    //Arrage (preparações)
-    cy.visit('http://localhost:4000')
-
     //Act (ações do teste)
     cy.get('#username').click().type('julio.lima') 
     cy.get('#senha').click().type('654321')
