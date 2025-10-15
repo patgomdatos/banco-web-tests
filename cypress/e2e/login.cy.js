@@ -2,12 +2,15 @@ describe('template spec', () => {
   beforeEach(() => {
     //Arrage (preparações)
     cy.visit('http://localhost:4000')
+    cy.screenshot('Apos-visitar-pagina')
   })
   it('Login com ados validados deve permitir entradas no sistema', () => {
     //Act (ações do teste)
     cy.get('#username').click().type('julio.lima')
     cy.get('#senha').click().type('123456')
+    cy.screenshot('apos-preencher-com-datos-validos')
     cy.get('#login-section > .btn').click()
+    cy.screenshot('apos-clicar-no-botao-entrar')
     //cy.contains('button', 'Entrar').click()
 
     //Assert
