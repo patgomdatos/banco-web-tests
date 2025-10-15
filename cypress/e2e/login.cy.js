@@ -4,7 +4,7 @@ describe('template spec', () => {
     cy.visit('http://localhost:4000')
     cy.screenshot('Apos-visitar-pagina')
   })
-  it.only('Login com ados validados deve permitir entradas no sistema', () => {
+  it('Login com ados validados deve permitir entradas no sistema', () => {
     //Act (ações do teste)
     cy.get('#username').click().type('julio.lima')
     cy.get('#senha').click().type('123456')
