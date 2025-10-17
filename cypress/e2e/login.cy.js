@@ -1,7 +1,7 @@
 describe('template spec', () => {
   beforeEach(() => {
     //Arrage (preparações)
-    cy.visit('http://localhost:4000')
+    cy.visit(Cypress.env('URL'))
     cy.screenshot('Apos-visitar-pagina')
   })
   it('Login com ados validados deve permitir entradas no sistema', () => {
